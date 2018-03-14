@@ -22,3 +22,41 @@ angular.module('starter', ['ionic'])
     }
   });
 })
+
+.controller('GeneralController', generalController);
+
+function generalController($scope) {
+  var centesimas = 0;
+  var segundos = 0;
+  $scope.texto = 'Inicio';
+
+  $scope.calculo = function () {
+    if($scope.texto == 'Inicio'){
+      $scope.texto = 'Parar';
+      centesimas = 0;
+      segundos = 0;
+      Centesimas.innerHTML = centesimas;
+      Segundos.innerHTML = segundos;
+      $scope.control = setInterval(function () {
+        if (centesimas < 99) {
+          centesimas++;
+          if (centesimas < 10) {
+            centesimas = "0" + centesimas;
+          }
+          Centesimas.innerHTML = centesimas;
+        }
+        if (centesimas == 99) {
+          centesimas = -1;
+        }
+        if (centesimas == 0) {
+          segundos ++;
+          Segundos.innerHTML = segundos;
+        }
+        console.log(segundos + ':' + centesimas);
+      }, 10);
+    } else {
+      $scope.texto = 'Inicio';
+      clearInterval($scope.control);
+    }
+  };
+}
