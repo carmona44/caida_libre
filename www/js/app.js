@@ -29,6 +29,9 @@ function generalController($scope) {
   var centesimas = 0;
   var segundos = 0;
   $scope.texto = 'Inicio';
+  $scope.tiempo = 0;
+  $scope.velocidad = 0;
+  $scope.profundidad = 0;
 
   $scope.calculo = function () {
     if($scope.texto == 'Inicio'){
@@ -52,11 +55,13 @@ function generalController($scope) {
           segundos ++;
           Segundos.innerHTML = segundos;
         }
-        console.log(segundos + ':' + centesimas);
       }, 10);
     } else {
       $scope.texto = 'Inicio';
       clearInterval($scope.control);
+      $scope.tiempo = segundos + '.' + centesimas;
+      $scope.velocidad = Math.round((9.81 * $scope.tiempo) * 100) / 100;
+      $scope.profundidad = Math.round(((9.81 * Math.pow($scope.tiempo, 2)) / 2) * 100) / 100;
     }
   };
 }
