@@ -38,13 +38,22 @@
         <h1 class="title">Caída libre</h1>
       </ion-header-bar>
       <ion-content style="margin: auto; text-align: center;">
-        <p style="padding: 40px 0px 20px 0px;">
-          <span style="font-size: 64px;" id="Segundos">0</span> :
-          <span id="Centesimas">00</span>
-        </p>
-        <button class="button button-large button-positive" style="border-radius: 200px;" ng-click="calculo()">{{texto}}</button>
-        <p>Velocidad de impacto: {{velocidad}} m/s</p>
-        <p>Profundidad: {{profundidad}} m</p>
+        <div>
+          <p style="padding: 60px 0px 20px 0px;">
+            <span style="font-size: 128px;" id="Segundos">0</span> :
+            <span id="Centesimas">00</span>
+          </p>
+          <button class="button button-large button-positive" style="border-radius: 200px;" ng-click="calculo()">{{texto}}</button>
+        </div>
+        <div style="margin-top: 40px; border-top: 2px solid black; padding: 20px 10px 0px 10px;">
+          <div style="text-align: left; background-color: #cccccc; padding-left: 5px; border: 1px solid black;">Velocidad de impacto</div>
+          <div>
+            <div style="float: left; text-align: center; width: 50%; border-left: 1px solid black; border-right: 1px solid black;">{{velocidad}} m/s</div>
+            <div style="border-right: 1px solid black;">{{velocidadKmH}} km/h</div>
+          </div>
+          <div style="text-align: left; background-color: #cccccc; padding-left: 5px; border: 1px solid black;">Profundidad</div>
+          <div style="border-left: 1px solid black; border-right: 1px solid black; border-bottom: 1px solid black;">{{profundidad}} m</div>
+        </div>
       </ion-content>
     </ion-pane>
   </body>

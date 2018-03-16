@@ -31,6 +31,7 @@ function generalController($scope) {
   $scope.texto = 'Inicio';
   $scope.tiempo = 0;
   $scope.velocidad = 0;
+  $scope.velocidadKmH = 0;
   $scope.profundidad = 0;
 
   $scope.calculo = function () {
@@ -61,6 +62,7 @@ function generalController($scope) {
       clearInterval($scope.control);
       $scope.tiempo = segundos + '.' + centesimas;
       $scope.velocidad = Math.round((9.81 * $scope.tiempo) * 100) / 100;
+      $scope.velocidadKmH = Math.round(($scope.velocidad / 1000 * 3600) * 100) / 100;
       $scope.profundidad = Math.round(((9.81 * Math.pow($scope.tiempo, 2)) / 2) * 100) / 100;
     }
   };
