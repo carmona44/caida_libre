@@ -1,1 +1,64 @@
-/* Empty. Add your own CSS if you like */
+/* Add your own CSS if you like */
+.contenido{
+  margin: auto;
+  text-align: center;
+  background-color: black;
+  color: white;
+}
+
+.cronometro{
+  padding: 60px 0px 20px 0px;
+}
+
+.segundos{
+  font-size: 128px;
+  color: lawngreen;
+}
+
+.centesimas{
+  color: orange;
+}
+
+.boton-inicio{
+  border-radius: 200px;
+}
+
+.resultados{
+  margin-top: 40px;
+  border-top: 2px solid deepskyblue;
+  padding: 20px 10px 0px 10px;
+}
+
+.cuadro-velocidad{
+  text-align: left;
+  background-color: purple;
+  padding-left: 5px;
+  border: 1px solid white;
+  font-weight: bold;
+}
+
+.velocidad-kmh{
+  border-right: 1px solid white;
+}
+
+.velocidad-ms{
+  float: left;
+  text-align: center;
+  width: 50%;
+  border-left: 1px solid white;
+  border-right: 1px solid white;
+}
+
+.cuadro-profundidad{
+  text-align: left;
+  background-color: orange;
+  padding-left: 5px;
+  border: 1px solid white;
+  font-weight: bold;
+}
+
+.resultado-profundidad{
+  border-left: 1px solid white;
+  border-right: 1px solid white;
+  border-bottom: 1px solid white;
+}
